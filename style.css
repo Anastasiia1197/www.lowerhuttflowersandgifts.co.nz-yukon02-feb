@@ -40,22 +40,22 @@
 	interpolate-size: allow-keywords;
 
 	--background: linear-gradient(45deg, #0c0a09 0%, #1c1917 45%, #0c0a09 100%);
-	--header: linear-gradient(90deg, #1c1917e0, #2dd4bf, #0c0a09);
-	--btn-accent: linear-gradient(135deg, #fb923c, #ea580c);
-	--btn-inherit: #fff7ed;
-	--accent: linear-gradient(135deg, #f97316, #c2410c);
-	--sub-title: linear-gradient(-135deg, #2dd4bf30, #042f2e);
-	--gift: #f0fdfae1;
-	--gift-bg: rgba(251, 146, 60, 0.1);
-	--gift-btn: linear-gradient(135deg, #9a3412, #431407);
+	--header: linear-gradient(-90deg, #1c1917e0, #bef264, #0c0a09);
+	--btn-accent: linear-gradient(135deg, #a3e635, #4d7c0f);
+	--btn-inherit: #f7fee7;
+	--accent: linear-gradient(135deg, #d9f99d, #3f6212);
+	--sub-title: linear-gradient(-135deg, #bef26420, #14532d);
+	--gift: #f7fee7;
+	--gift-bg: rgba(163, 230, 53, 0.1);
+	--gift-btn: linear-gradient(135deg, #365314, #0c0a09);
 	--border-radius: 10px;
 	--container: #0c0a09;
 	--table: linear-gradient(180deg, #1c1917, #0c0a09);
-	--minus: #38bdf8;
-	--shadow: #fb923c50;
-	--second-shadow: #ea580c;
-	--text-shadow: #2dd4bf;
-	--list-bg: linear-gradient(90deg, rgba(45, 212, 191, 0.1), rgba(251, 146, 60, 0.1));
+	--minus: #fb7185;
+	--shadow: #a3e63550;
+	--second-shadow: #65a30d;
+	--text-shadow: #bef264;
+	--list-bg: linear-gradient(90deg, rgba(190, 242, 100, 0.1), rgba(163, 230, 53, 0.1));
 }
 
 * {
@@ -192,6 +192,7 @@ header {
 	align-items: center;
 	justify-content: space-between;
 	background: var(--header);
+	background-size: 200% 100%; /* Розтягуємо градієнт, щоб було куди рухати */
 	box-shadow: 0 3px 3px var(--shadow);
 	max-width: 100vw;
 	margin: 0 auto;
@@ -199,6 +200,18 @@ header {
 	top: 0;
 	z-index: 100;
 	overflow: hidden;
+	/*  */
+	animation: scroll-gradient linear;
+	animation-timeline: scroll();
+}
+
+@keyframes scroll-gradient {
+	from {
+		background-position: 0% 0%;
+	}
+	to {
+		background-position: 100% 0%;
+	}
 }
 
 header img {
